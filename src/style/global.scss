@@ -1,0 +1,77 @@
+@import './bulma.custom.scss';
+@import './reset.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html,
+body {
+  font-family: "Montserrat", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px !important;
+  color: $primary-text-color;
+  background: $background-color;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $primary-text-color;
+  @include font-smoothing(on);
+}
+
+h1 {
+  font-family: "Montserrat", serif;
+  font-weight: 900;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Montserrat", serif;
+  font-weight: 200;
+}
+
+a {
+  transform: translateZ(0);
+  transition: 0.3s ease;
+  @include font-smoothing(on);
+
+  &:hover {
+    color: $accent-color-light;
+  }
+}
+
+p {
+  font-weight: 300;
+  @include font-smoothing(on);
+
+  strong {
+    font-weight: 600;
+    font-style: italic;
+  }
+}
+
+.button {
+  font-family: "Bodoni Moda", serif;
+  font-weight: 900;
+  border-radius: 32px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  height: auto !important;
+
+  &.is-success {
+    text-shadow: 1px 1px 2px darken($success-primary-color, 10%) !important;
+    border: 1px solid darken($success-primary-color, 30%) !important;
+    border-width: 1px 1px 5px 1px !important;
+  }
+  
+  &.is-outlined {
+    background: rgba($color: #fff, $alpha: 0.2) !important;
+    // backdrop-filter: blur(24px);
+    text-shadow: none !important;
+  }
+}

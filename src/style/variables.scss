@@ -1,0 +1,23 @@
+$primary-color: #61378e;
+$primary-color-light: lighten($primary-color, 50%);
+$primary-color-dark: darken($primary-color, 25%);
+$accent-color: orange;
+$accent-color-light: lighten($accent-color, 10%);
+$accent-color-alt: #bf2c25;
+$primary-text-color: #242424;
+$secondary-text-color: #f4f4f4;
+
+$background-color: #ffffff;
+
+$info-primary-color: #03a9f4;
+$success-primary-color: lighten(#26b569, 10%);
+$warning-primary-color: #ffeb3b;
+$danger-primary-color: #f44336;
+
+$primary: $primary-color;
+$link: $accent-color;
+$info: $info-primary-color;
+$success: $success-primary-color;
+$warning: $warning-primary-color;
+$danger: $danger-primary-color;
+$tag-radius: 4px;

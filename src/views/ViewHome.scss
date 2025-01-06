@@ -1,0 +1,174 @@
+.hero {
+  overflow: hidden !important;
+}
+
+body {
+  overflow: hidden !important;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateZ(0);
+  z-index: 0;
+  overflow: hidden;
+  background: url('/llamachain.jpg') no-repeat;
+  background-size: cover;
+
+  .shade {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 111;
+    background: linear-gradient(0deg, rgba(black, 1), rgba(black, 0.33));
+    backdrop-filter: blur(24px);
+  }
+
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.home {
+
+  .frame {}
+
+  .logo {
+    margin: 0 auto;
+    height: 256px;
+    max-width: 256px;
+    border-radius: 100%;
+    background: url('/llamachain.jpg');
+    background-size: cover;
+    border-radius: 100%;
+    border: 10px solid #111;
+    border-width: 0 0 10px !important;
+  }
+
+  h1 {
+    margin-top: 1em;
+    color: #fff;
+  }
+
+  h2 {
+    color: #fff;
+  }
+
+  hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  p {
+    color: #fff;
+    text-align: justify !important;
+  }
+
+  .llamachain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    transform: translate3d(0, 0, 0);
+    aspect-ratio: 2/3;
+  }
+
+  .card {
+    margin: 0 auto;
+    width: 300px;
+    max-width: 90%;
+    box-sizing: border-box;
+    position: relative;
+    background: transparent;
+    box-shadow: none;
+    aspect-ratio: 2/3;
+  }
+
+  .card__wrapper {
+    perspective: 600px;
+    position: absolute;
+    inset: 0;
+  }
+
+  .card__3d {
+    transform: rotateY(var(--r-x)) rotateX(var(--r-y));
+    position: absolute;
+    inset: 0;
+    clip-path: inset(0 0 0 0 round 4px);
+    border: 10px solid #fff;
+    background-color: #fff;
+  }
+
+  .card__image {
+    clip-path: inset(0 0 0 0 round 4px);
+  }
+
+  .card__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* soft light */
+  .card__layer1 {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    mix-blend-mode: soft-light;
+    clip-path: inset(0 0 1px 0 round 4px);
+    background: radial-gradient(
+      farthest-corner circle at var(--x) var(--y),
+      rgba(255, 255, 255, 0.8) 10%,
+      rgba(255, 255, 255, 0.65) 20%,
+      rgba(255, 255, 255, 0) 90%
+    );
+    aspect-ratio: 2/3;
+  }
+
+  /* first crazy blend  */
+  .card__layer2 {
+    position: absolute;
+    inset: 0;
+    z-index: 30;
+    opacity: 0.75;
+
+    mix-blend-mode: color-dodge;
+    will-change: background;
+    transition-property: opacity;
+    clip-path: inset(0 0 1px 0 round 4px);
+
+    background-blend-mode: hue, hue, hard-light, overlay;
+    background: var(--pattern), var(--rainbow), var(--diagonal);
+    aspect-ratio: 2/3;
+  }
+
+  /* second crazy blend  */
+  .card__layer2:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--pattern), var(--rainbow), var(--diagonal), var(--shade);
+    mix-blend-mode: exclusion;
+    background-size: 75%, 200% 400%, 800%, 200%;
+    background-position: center, 0% var(--bg-y),
+      calc(var(--bg-x) * -1) calc(var(--bg-y) * -1), var(--bg-x) var(--bg-y);
+    background-blend-mode: soft-light, hue, hard-light;
+    aspect-ratio: 2/3;
+  }
+}
